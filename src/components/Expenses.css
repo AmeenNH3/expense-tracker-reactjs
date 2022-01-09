@@ -1,5 +1,5 @@
 .expenses {
-  padding: 2rem;
+  padding-top: 0 !important;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 0.75rem;
