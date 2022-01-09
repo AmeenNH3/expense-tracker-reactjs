@@ -1,0 +1,42 @@
+.new-expense-form {
+  background-color: rgb(219, 217, 217);
+  border-radius: 6px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+}
+
+.new-expense__controls {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.new-expense__control {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.new-expense__control input {
+  padding: 8px 20px;
+  border-style: none;
+  border-radius: 8px;
+}
+
+.new-expense__control input:focus {
+  outline: none;
+  outline: 1px solid #40005d;
+}
+
+.new-expense__button {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  background-color: #40005d;
+  color: #fff;
+}
