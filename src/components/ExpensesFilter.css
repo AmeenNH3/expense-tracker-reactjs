@@ -1,6 +1,6 @@
 .expenses-filter {
   color: rgb(0, 0, 0);
-  padding: 0 2rem !important;
+  padding: 2rem 0 0 0 !important;
 }
 
 .expenses-filter__control {
@@ -8,7 +8,7 @@
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  margin: 2.5rem 0 0 0;
+  margin: 1rem 0 0 0;
 }
 
 .expenses-filter label {

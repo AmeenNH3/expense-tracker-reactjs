@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Noto Sans Avestan
+- Font Author: Copyright 2019 Google Inc. All Rights Reserved.
+- Font Source: http://fonts.gstatic.com/s/notosansavestan/v13/bWti7ejKfBziStx7lIzKOLQZKhIJkyu9SASLji8U.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

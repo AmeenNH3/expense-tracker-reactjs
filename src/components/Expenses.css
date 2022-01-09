@@ -4,3 +4,16 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 0.75rem;
 }
+
+.no-expenses {
+  grid-column: 1/-1;
+  text-align: center;
+  /* background-color: aqua; */
+  color: rgb(107, 107, 107);
+  padding: 1rem 0 0 1rem;
+  font-size: 24px;
+}
+
+.expense-wrapper {
+  padding-top: 0rem !important;
+}

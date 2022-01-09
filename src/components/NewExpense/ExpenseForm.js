@@ -5,6 +5,8 @@ export default function ExpenseForm(props) {
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
+  const [addExpense, setAddExpense] = useState(true);
+
   function titleChangeHandler(e) {
     setEnteredTitle(e.target.value);
   }
@@ -29,6 +31,25 @@ export default function ExpenseForm(props) {
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
+  }
+
+  function addExpenseClickHandler() {
+    setAddExpense((prevState) => {
+      return !prevState;
+    });
+  }
+
+  if (addExpense) {
+    return (
+      <div className="expense-action-container wrapper">
+        <div className="expense-action--control">
+          <button className="add-expense-button" onClick={addExpenseClickHandler}>
+            <ion-icon className="add-expense-icon" name="add-circle-outline"></ion-icon>
+            Add Expense
+          </button>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -62,6 +83,9 @@ export default function ExpenseForm(props) {
       <div className="new-expense__actions">
         <button className="new-expense__button" type="submit">
           Add Expense
+        </button>
+        <button type="button" className="new-expense__button" onClick={addExpenseClickHandler}>
+          Cancel
         </button>
       </div>
     </form>
