@@ -1,0 +1,18 @@
+.expense-chart {
+  margin-top: 2rem;
+  background-color: blanchedalmond;
+  padding: 1rem;
+  position: relative;
+}
+
+.close-icon-div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 3px;
+}
+
+.close-icon-div ion-icon {
+  width: 24px;
+  height: 24px;
+}

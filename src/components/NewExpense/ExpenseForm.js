@@ -6,6 +6,7 @@ export default function ExpenseForm(props) {
   const [enteredDate, setEnteredDate] = useState("");
 
   const [addExpense, setAddExpense] = useState(true);
+  // const [showChart, setShowChart] = useState(false);
 
   function titleChangeHandler(e) {
     setEnteredTitle(e.target.value);
@@ -31,12 +32,20 @@ export default function ExpenseForm(props) {
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
+
+    setAddExpense((prevState) => {
+      return !prevState;
+    });
   }
 
   function addExpenseClickHandler() {
     setAddExpense((prevState) => {
       return !prevState;
     });
+  }
+
+  function showChartClickHandler() {
+    props.onShowChart();
   }
 
   if (addExpense) {
@@ -46,6 +55,10 @@ export default function ExpenseForm(props) {
           <button className="add-expense-button" onClick={addExpenseClickHandler}>
             <ion-icon className="add-expense-icon" name="add-circle-outline"></ion-icon>
             Add Expense
+          </button>
+          <button className="add-expense-button" onClick={showChartClickHandler}>
+            <ion-icon className="add-expense-icon" name="stats-chart-outline"></ion-icon>
+            Show Chart
           </button>
         </div>
       </div>
@@ -57,7 +70,7 @@ export default function ExpenseForm(props) {
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" value={enteredTitle} onChange={titleChangeHandler} />
+          <input required type="text" value={enteredTitle} onChange={titleChangeHandler} />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
@@ -67,6 +80,7 @@ export default function ExpenseForm(props) {
             min="0.01"
             step="0.01"
             onChange={amountChangeHandler}
+            required
           />
         </div>
         <div className="new-expense__control">
@@ -77,6 +91,7 @@ export default function ExpenseForm(props) {
             min="2019-01-01"
             max="2022-12-31"
             onChange={dateChangeHandler}
+            required
           />
         </div>
       </div>

@@ -15,13 +15,11 @@ body {
   background: #ffffff;
   color: rgb(20, 20, 20);
 }
-
-code {
+s code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .wrapper {
   width: 1124px !important;
   margin: 0 auto !important;
-  padding: 24px !important;
 }

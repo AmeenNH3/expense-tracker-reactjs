@@ -2,10 +2,14 @@ import { useState } from "react";
 import "./Expenses.css";
 import ExpenseItem from "./ExpenseItem.js";
 import ExpensesFilter from "./ExpensesFilter";
+import ExpenseChart from "./ExpenseChart";
 
-export default function Expenses({ expenses }) {
+export default function Expenses({ expenses, showChartStatus, onCloseChart }) {
   const [filterYear, setfilterYear] = useState("2022");
 
+  function closeChart() {
+    onCloseChart();
+  }
   function filterChangeHandler(value) {
     setfilterYear(value);
   }
@@ -16,6 +20,7 @@ export default function Expenses({ expenses }) {
 
   return (
     <div className="wrapper expense-wrapper">
+      {showChartStatus && <ExpenseChart closeChart={closeChart}></ExpenseChart>}
       <ExpensesFilter
         selected={filterYear}
         OnFilterChangeExpenses={filterChangeHandler}

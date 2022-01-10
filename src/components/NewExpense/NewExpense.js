@@ -1,6 +1,9 @@
 import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.css";
 export default function newExpense(props) {
+  function showChartClickHandlerAtNewExpense() {
+    props.onShowChartAtApp();
+  }
   function saveExpenseDataHandler(data) {
     const expenseData = {
       id: `e${Math.floor(Math.random() * 100000).toString()}`, //Not the best way to do this, works for this project though
@@ -11,7 +14,10 @@ export default function newExpense(props) {
   }
   return (
     <div className="new-expense wrapper">
-      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler}></ExpenseForm>
+      <ExpenseForm
+        onShowChart={showChartClickHandlerAtNewExpense}
+        onSaveExpenseData={saveExpenseDataHandler}
+      ></ExpenseForm>
     </div>
   );
 }
