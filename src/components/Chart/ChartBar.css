@@ -21,7 +21,7 @@
   width: 100%;
   height: 50%;
   background-color: rgb(42, 10, 148);
-  background: linear-gradient(to left, #4c62c4, #00ffd5);
+  background: linear-gradient(to left, #40005d, #00ffd5);
   animation-name: animate-height;
   animation-duration: 1s;
 }

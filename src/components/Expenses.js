@@ -4,7 +4,7 @@ import ExpenseItem from "./ExpenseItem.js";
 import ExpensesFilter from "./ExpensesFilter";
 import ExpenseChart from "./ExpenseChart";
 
-export default function Expenses({ expenses, showChartStatus, onCloseChart }) {
+export default function Expenses({ expenses, showChartStatus, onCloseChart, onEditApp }) {
   const [filterYear, setfilterYear] = useState("2022");
 
   function closeChart() {
@@ -12,6 +12,11 @@ export default function Expenses({ expenses, showChartStatus, onCloseChart }) {
   }
   function filterChangeHandler(value) {
     setfilterYear(value);
+  }
+
+  function onEditHandlerExpenses(data) {
+    onEditApp(data);
+    // console.log(data);
   }
 
   let filteredExpenses = expenses.filter((expense) => {
@@ -25,10 +30,13 @@ export default function Expenses({ expenses, showChartStatus, onCloseChart }) {
         filteredExpenses.map((expenseItem, index) => {
           return (
             <ExpenseItem
+              onEdit={onEditHandlerExpenses}
               title={expenseItem.title}
               amount={expenseItem.amount}
               date={expenseItem.date}
+              id={expenseItem.id}
               key={expenseItem.id}
+              filterYear={filterYear}
             ></ExpenseItem>
           );
         })}

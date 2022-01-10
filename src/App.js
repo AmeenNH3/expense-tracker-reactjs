@@ -25,6 +25,30 @@ function App() {
     });
   }
 
+  function onEditApp(data) {
+    console.log(data.id);
+
+    const editedExpenses = expenses.map((expense) => {
+      console.log(expense);
+      if (expense.id == data.id) {
+        return data;
+      }
+      return expense;
+    });
+    // console.log(editedExpenses);
+    // setExpenses((prevState) => {
+    //   prevState.map((item) => {
+    //     console.log(item.id);
+    //     if (item.id == data.id) {
+    //       return data;
+    //     }
+    //     return item;
+    //   });
+    // });
+
+    setExpenses(editedExpenses);
+  }
+
   return (
     <div className="main-container">
       <Header></Header>
@@ -37,6 +61,7 @@ function App() {
         showChartStatus={showChart}
         onCloseChart={onCloseChartHandlerAtApp}
         expenses={expenses}
+        onEditApp={onEditApp}
       ></Expenses>
     </div>
   );

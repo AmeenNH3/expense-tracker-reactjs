@@ -6,11 +6,13 @@
   align-items: center;
   gap: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  padding: 0.5rem;
+  padding: 1rem;
   margin: 1rem 0;
   border-radius: 12px;
   background-color: #05565c;
   transition: all 0.3s;
+  position: relative;
+  height: 10rem;
 }
 
 .expense-item:hover {
@@ -59,3 +61,50 @@
   .expense-item__price {
   }
 } */
+
+.expense-item ion-icon {
+  position: absolute;
+  top: 8%;
+  right: 5%;
+  width: 16px;
+  height: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.expense-item ion-icon:hover {
+  color: #888;
+}
+
+.edit-item {
+  padding: 3px;
+  border: none;
+  border-bottom: 1px solid black;
+  /* border-radius: 6px; */
+  background-color: #fff;
+}
+.edit-item::placeholder {
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: center;
+  color: rgb(177, 176, 176);
+}
+.edit-item:focus {
+  outline: none;
+}
+
+.expense-item.edit {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.37);
+  border: 1px solid #044347;
+}
+
+.expense-item.edit ion-icon {
+  color: #000;
+}
+
+.edit-save-btn {
+  background-color: #05565c;
+  color: #fff;
+  padding: 3px 6px;
+}

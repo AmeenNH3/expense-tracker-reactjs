@@ -1,7 +1,6 @@
 import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.css";
 export default function newExpense(props) {
-  console.log(props);
   function showChartClickHandlerAtNewExpense() {
     props.onShowChartAtApp();
   }

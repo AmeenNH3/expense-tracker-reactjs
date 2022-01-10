@@ -23,4 +23,20 @@ s code {
 .wrapper {
   width: 1124px !important;
   margin: 0 auto !important;
+  padding: 0 24px;
+}
+
+@media (max-width: 1150px) {
+  .wrapper {
+    width: 868px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .expenses {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .navlist {
+    display: none !important;
+  }
 }
