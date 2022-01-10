@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./ExpenseForm.css";
 export default function ExpenseForm(props) {
   const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState(0);
   const [enteredDate, setEnteredDate] = useState("");
 
   const [addExpense, setAddExpense] = useState(true);
@@ -23,14 +23,14 @@ export default function ExpenseForm(props) {
 
     const enteredData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
 
     props.onSaveExpenseData(enteredData);
 
     setEnteredTitle("");
-    setEnteredAmount("");
+    setEnteredAmount(0);
     setEnteredDate("");
 
     setAddExpense((prevState) => {
@@ -56,10 +56,12 @@ export default function ExpenseForm(props) {
             <ion-icon className="add-expense-icon" name="add-circle-outline"></ion-icon>
             Add Expense
           </button>
-          <button className="add-expense-button" onClick={showChartClickHandler}>
-            <ion-icon className="add-expense-icon" name="stats-chart-outline"></ion-icon>
-            Show Chart
-          </button>
+          {!props.showChartStatus && (
+            <button className="add-expense-button" onClick={showChartClickHandler}>
+              <ion-icon className="add-expense-icon" name="stats-chart-outline"></ion-icon>
+              Show Chart
+            </button>
+          )}
         </div>
       </div>
     );

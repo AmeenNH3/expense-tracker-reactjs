@@ -1,6 +1,7 @@
 import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.css";
 export default function newExpense(props) {
+  console.log(props);
   function showChartClickHandlerAtNewExpense() {
     props.onShowChartAtApp();
   }
@@ -15,6 +16,7 @@ export default function newExpense(props) {
   return (
     <div className="new-expense wrapper">
       <ExpenseForm
+        showChartStatus={props.showChartStatus}
         onShowChart={showChartClickHandlerAtNewExpense}
         onSaveExpenseData={saveExpenseDataHandler}
       ></ExpenseForm>

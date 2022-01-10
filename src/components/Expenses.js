@@ -18,27 +18,33 @@ export default function Expenses({ expenses, showChartStatus, onCloseChart }) {
     return expense.date.getFullYear() == filterYear;
   });
 
+  const expenseComponent = (
+    <div className="expenses">
+      {filteredExpenses.length === 0 && <p className="no-expenses">No expenses found</p>}
+      {filteredExpenses.length > 0 &&
+        filteredExpenses.map((expenseItem, index) => {
+          return (
+            <ExpenseItem
+              title={expenseItem.title}
+              amount={expenseItem.amount}
+              date={expenseItem.date}
+              key={expenseItem.id}
+            ></ExpenseItem>
+          );
+        })}
+    </div>
+  );
+
   return (
     <div className="wrapper expense-wrapper">
-      {showChartStatus && <ExpenseChart closeChart={closeChart}></ExpenseChart>}
+      {showChartStatus && (
+        <ExpenseChart expenses={filteredExpenses} closeChart={closeChart}></ExpenseChart>
+      )}
       <ExpensesFilter
         selected={filterYear}
         OnFilterChangeExpenses={filterChangeHandler}
       ></ExpensesFilter>
-      <div className="expenses">
-        {filteredExpenses.length === 0 && <p className="no-expenses">No expenses found</p>}
-        {filteredExpenses.length > 0 &&
-          filteredExpenses.map((expenseItem, index) => {
-            return (
-              <ExpenseItem
-                title={expenseItem.title}
-                amount={expenseItem.amount}
-                date={expenseItem.date}
-                key={expenseItem.id}
-              ></ExpenseItem>
-            );
-          })}
-      </div>
+      {expenseComponent}
     </div>
   );
 }
