@@ -1,6 +1,6 @@
 import "./ExpenseItem.css";
 import { useState } from "react";
-
+import { BsPencil } from "react-icons/bs";
 import ExpenseDate from "./ExpenseDate";
 
 function ExpenseItem(props) {
@@ -101,6 +101,7 @@ function ExpenseItem(props) {
   return (
     <div data-id={props.id} className="expense-item">
       <ion-icon title={false} name="pencil-outline" onClick={onEditHandler}></ion-icon>
+
       <ExpenseDate date={date}></ExpenseDate>
       <div className="expense-item__description">
         <h2>{title}</h2>

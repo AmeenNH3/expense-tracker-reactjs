@@ -15,4 +15,5 @@
 .close-icon-div ion-icon {
   width: 24px;
   height: 24px;
+  cursor: pointer;
 }

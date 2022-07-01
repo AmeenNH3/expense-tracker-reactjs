@@ -35,16 +35,6 @@ function App() {
       }
       return expense;
     });
-    // console.log(editedExpenses);
-    // setExpenses((prevState) => {
-    //   prevState.map((item) => {
-    //     console.log(item.id);
-    //     if (item.id == data.id) {
-    //       return data;
-    //     }
-    //     return item;
-    //   });
-    // });
 
     setExpenses(editedExpenses);
   }
